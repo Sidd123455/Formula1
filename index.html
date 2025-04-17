@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Racing Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="loader">
+        <div class="loader-content">
+            <div class="f1-logo">F1</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="nav-logo">F1 Racing Hub</a>
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#teams">Teams</a></li>
+                <li><a href="#drivers">Drivers</a></li>
+                <li><a href="#cars">Cars</a></li>
+                <li><a href="#tracks">Tracks</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="rawrrever-20250417-0001.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Formula 1 Racing</h1>
+            <p>Experience the thrill of speed, precision, and competition</p>
+            <div class="hero-buttons">
+                <a href="#teams" class="btn btn-primary">Explore Teams</a>
+                <a href="#schedule" class="btn btn-secondary">Race Schedule</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section id="teams" class="teams-section">
+        <h2 class="section-title">Top Teams</h2>
+        <div class="teams-grid">
+            <div class="team-card" data-team="ferrari">
+                <div class="team-image">
+                    <img src="formula-1-2023-red-race-car-ferrari-wallpaper-2880x1620_52.jpg" alt="Ferrari">
+                </div>
+                <div class="team-info">
+                    <h3>Ferrari</h3>
+                    <p>Scuderia Ferrari</p>
+                    <button class="team-details-btn">View Details</button>
+                </div>
+            </div>
+            <div class="team-card" data-team="mercedes">
+                <div class="team-image">
+                    <img src="mercedes-benz-mercedes-amg-f1-car-formula-1-wallpaper-preview.jpg" alt="Mercedes">
+                </div>
+                <div class="team-info">
+                    <h3>Mercedes</h3>
+                    <p>Mercedes-AMG Petronas</p>
+                    <button class="team-details-btn">View Details</button>
+                </div>
+            </div>
+            <div class="team-card" data-team="redbull">
+                <div class="team-image">
+                    <img src="thumb2-2025-red-bull-racing-rb21-4k-formula-1-racing-car-2025.jpg" alt="Red Bull">
+                </div>
+                <div class="team-info">
+                    <h3>Red Bull Racing</h3>
+                    <p>Oracle Red Bull Racing</p>
+                    <button class="team-details-btn">View Details</button>
+                </div>
+            </div>
+            <div class="team-card" data-team="astonmartin">
+                <div class="team-image">
+                    <img src="formula-1-aston-martin-aston-martin-f1-race-cars-british-racing-green-hd-wallpaper-preview.jpg" alt="Aston Martin">
+                </div>
+                <div class="team-info">
+                    <h3>Aston Martin</h3>
+                    <p>Aston Martin F1 Team</p>
+                    <button class="team-details-btn">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="drivers" class="drivers-section">
+        <h2 class="section-title">Featured Drivers</h2>
+        <div class="drivers-grid">
+            <div class="driver-card" data-driver="verstappen">
+                <div class="driver-image">
+                    <img src="39946-list.jpg" alt="Max Verstappen">
+                </div>
+                <div class="driver-info">
+                    <h3>Max Verstappen</h3>
+                    <p>Red Bull Racing</p>
+                    <div class="driver-stats">
+                        <div class="stat">
+                            <span class="stat-value">3</span>
+                            <span class="stat-label">Championships</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">54</span>
+                            <span class="stat-label">Wins</span>
+                        </div>
+                    </div>
+                    <button class="driver-details-btn">View Profile</button>
+                </div>
+            </div>
+            <div class="driver-card" data-driver="hamilton">
+                <div class="driver-image">
+                    <img src="c.webp" alt="Lewis Hamilton">
+                </div>
+                <div class="driver-info">
+                    <h3>Lewis Hamilton</h3>
+                    <p>Mercedes</p>
+                    <div class="driver-stats">
+                        <div class="stat">
+                            <span class="stat-value">7</span>
+                            <span class="stat-label">Championships</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">103</span>
+                            <span class="stat-label">Wins</span>
+                        </div>
+                    </div>
+                    <button class="driver-details-btn">View Profile</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cars" class="cars-section">
+        <h2 class="section-title">2024 F1 Cars</h2>
+        <div class="car-showcase">
+            <div class="car-slider">
+                <div class="car-slide active">
+                    <img src="HD-wallpaper-red-ferrari-sf-24-2024-formula-one-car-ultra-sports-formula-1-ferrari-formulaone-2024.jpg" alt="Ferrari SF-24">
+                    <div class="car-info">
+                        <h3>Ferrari SF-24</h3>
+                        <p>The latest Ferrari challenger for the 2024 season</p>
+                        <div class="car-specs-preview">
+                            <div class="spec-item">
+                                <span class="spec-label">Top Speed</span>
+                                <span class="spec-value">338 km/h</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Power</span>
+                                <span class="spec-value">1000+ HP</span>
+                            </div>
+                        </div>
+                        <button class="car-details-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="car-slide">
+                    <img src="formula-1-formula-cars-red-bull-racing-mercedes-f1-hd-wallpaper-preview.jpg" alt="Red Bull RB20">
+                    <div class="car-info">
+                        <h3>Red Bull RB20</h3>
+                        <p>Dominant Red Bull machine for 2024</p>
+                        <div class="car-specs-preview">
+                            <div class="spec-item">
+                                <span class="spec-label">Top Speed</span>
+                                <span class="spec-value">340 km/h</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Power</span>
+                                <span class="spec-value">1000+ HP</span>
+                            </div>
+                        </div>
+                        <button class="car-details-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="car-slide">
+                    <img src="M484079.jpg" alt="Mercedes W15">
+                    <div class="car-info">
+                        <h3>Mercedes W15</h3>
+                        <p>Mercedes' latest challenger for 2024</p>
+                        <div class="car-specs-preview">
+                            <div class="spec-item">
+                                <span class="spec-label">Top Speed</span>
+                                <span class="spec-value">335 km/h</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Power</span>
+                                <span class="spec-value">1000+ HP</span>
+                            </div>
+                        </div>
+                        <button class="car-details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="car-controls">
+                <button class="car-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="car-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="car-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+        
+        <div class="car-comparison-tool">
+            <h3>Compare F1 Cars</h3>
+            <div class="comparison-selector">
+                <select id="car1-select">
+                    <option value="ferrari">Ferrari SF-24</option>
+                    <option value="redbull">Red Bull RB20</option>
+                    <option value="mercedes">Mercedes W15</option>
+                    <option value="mclaren">McLaren MCL38</option>
+                    <option value="astonmartin">Aston Martin AMR24</option>
+                </select>
+                <span class="vs">VS</span>
+                <select id="car2-select">
+                    <option value="redbull">Red Bull RB20</option>
+                    <option value="ferrari">Ferrari SF-24</option>
+                    <option value="mercedes">Mercedes W15</option>
+                    <option value="mclaren">McLaren MCL38</option>
+                    <option value="astonmartin">Aston Martin AMR24</option>
+                </select>
+            </div>
+            <div class="comparison-chart">
+                <canvas id="carComparisonChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="car-360-viewer">
+            <h3>360° Car Viewer</h3>
+            <div class="viewer-container">
+                <div class="viewer-controls">
+                    <button class="viewer-btn" data-view="front">Front</button>
+                    <button class="viewer-btn" data-view="side">Side</button>
+                    <button class="viewer-btn" data-view="rear">Rear</button>
+                    <button class="viewer-btn" data-view="top">Top</button>
+                </div>
+                <div class="viewer-display">
+                    <img id="car-360-img" src="HD-wallpaper-red-ferrari-sf-24-2024-formula-one-car-ultra-sports-formula-1-ferrari-formulaone-2024.jpg" alt="Ferrari SF-24">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tracks" class="tracks-section">
+        <h2 class="section-title">Famous Tracks</h2>
+        <div class="tracks-grid">
+            <div class="track-card">
+                <img src="images (1).jpg" alt="Monaco Circuit">
+                <div class="track-info">
+                    <h3>Monaco</h3>
+                    <p>Circuit de Monaco</p>
+                    <div class="track-details">
+                        <span><i class="fas fa-road"></i> 3.337 km</span>
+                        <span><i class="fas fa-flag-checkered"></i> 78 laps</span>
+                    </div>
+                </div>
+            </div>
+            <div class="track-card">
+                <img src="images (2).jpg" alt="Silverstone Circuit">
+                <div class="track-info">
+                    <h3>Silverstone</h3>
+                    <p>British Grand Prix</p>
+                    <div class="track-details">
+                        <span><i class="fas fa-road"></i> 5.891 km</span>
+                        <span><i class="fas fa-flag-checkered"></i> 52 laps</span>
+                    </div>
+                </div>
+            </div>
+            <div class="track-card">
+                <img src="images (3).jpg" alt="Spa Circuit">
+                <div class="track-info">
+                    <h3>Spa-Francorchamps</h3>
+                    <p>Belgian Grand Prix</p>
+                    <div class="track-details">
+                        <span><i class="fas fa-road"></i> 7.004 km</span>
+                        <span><i class="fas fa-flag-checkered"></i> 44 laps</span>
+                    </div>
+                </div>
+            </div>
+            <div class="track-card">
+                <img src="images (4).jpg" alt="Monza Circuit">
+                <div class="track-info">
+                    <h3>Monza</h3>
+                    <p>Italian Grand Prix</p>
+                    <div class="track-details">
+                        <span><i class="fas fa-road"></i> 5.793 km</span>
+                        <span><i class="fas fa-flag-checkered"></i> 53 laps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="schedule-section">
+        <h2 class="section-title">Race Schedule</h2>
+        <div class="schedule-timeline">
+            <div class="race-event">
+                <div class="date">March 2</div>
+                <div class="event">
+                    <h3>Bahrain Grand Prix</h3>
+                    <p>Bahrain International Circuit</p>
+                </div>
+                <div class="event-time">15:00 GMT</div>
+            </div>
+            <div class="race-event">
+                <div class="date">March 9</div>
+                <div class="event">
+                    <h3>Saudi Arabian Grand Prix</h3>
+                    <p>Jeddah Corniche Circuit</p>
+                </div>
+                <div class="event-time">17:00 GMT</div>
+            </div>
+            <div class="race-event">
+                <div class="date">March 24</div>
+                <div class="event">
+                    <h3>Australian Grand Prix</h3>
+                    <p>Albert Park Circuit</p>
+                </div>
+                <div class="event-time">14:00 GMT</div>
+            </div>
+            <div class="race-event">
+                <div class="date">April 7</div>
+                <div class="event">
+                    <h3>Japanese Grand Prix</h3>
+                    <p>Suzuka Circuit</p>
+                </div>
+                <div class="event-time">13:00 GMT</div>
+            </div>
+            <div class="race-event">
+                <div class="date">April 21</div>
+                <div class="event">
+                    <h3>Chinese Grand Prix</h3>
+                    <p>Shanghai International Circuit</p>
+                </div>
+                <div class="event-time">14:00 GMT</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <h2 class="section-title">F1 Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images (5).jpg" alt="F1 Action">
+            </div>
+            <div class="gallery-item">
+                <img src="images (6).jpg" alt="F1 Action">
+            </div>
+            <div class="gallery-item">
+                <img src="images (7).jpg" alt="F1 Action">
+            </div>
+            <div class="gallery-item">
+                <img src="images (8).jpg" alt="F1 Action">
+            </div>
+            <div class="gallery-item">
+                <img src="images (9).jpg" alt="F1 Action">
+            </div>
+            <div class="gallery-item">
+                <img src="images (10).jpg" alt="F1 Action">
+            </div>
+            <div class="gallery-item">
+                <img src="401958.jpg" alt="F1 Action">
+            </div>
+            <div class="gallery-item">
+                <img src="2024-08-25_Motorsport,_Formel_1,_Großer_Preis_der_Niederlande_2024_STP_3973_by_Stepro_(medium_crop).jpg" alt="F1 Action">
+            </div>
+        </div>
+        <div class="gallery-modal">
+            <span class="gallery-close">&times;</span>
+            <img class="gallery-modal-content" id="gallery-modal-img">
+            <div class="gallery-caption"></div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest F1 news and updates</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>F1 Racing Hub</h2>
+                <p>Your ultimate destination for Formula 1 racing</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#teams">Teams</a></li>
+                        <li><a href="#drivers">Drivers</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://www.formula1.com/">F1 Official Site</a></li>
+                        <li><a href="https://x.com/F1?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">F1 Tickets</a></li>
+                        <li><a href="https://usf1store.formula1.com/">F1 Store</a></li>
+                        <li><a href="https://f1tv.formula1.com/">F1 TV</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://x.com/F1?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/Formula1/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/f1/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCB_qr75-ydFVKSF9Dmo6izg"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 F1 Racing Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for team details -->
+    <div class="modal" id="team-modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <h2 id="modal-team-name">Team Name</h2>
+                <div class="modal-team-image">
+                    <img id="modal-team-img" src="" alt="Team">
+                </div>
+                <div class="modal-team-info">
+                    <p id="modal-team-description">Team description goes here.</p>
+                    <div class="modal-team-stats">
+                        <div class="stat">
+                            <span class="stat-value" id="modal-team-championships">0</span>
+                            <span class="stat-label">Championships</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="modal-team-wins">0</span>
+                            <span class="stat-label">Race Wins</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="modal-team-poles">0</span>
+                            <span class="stat-label">Pole Positions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for driver details -->
+    <div class="modal" id="driver-modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <h2 id="modal-driver-name">Driver Name</h2>
+                <div class="modal-driver-image">
+                    <img id="modal-driver-img" src="" alt="Driver">
+                </div>
+                <div class="modal-driver-info">
+                    <p id="modal-driver-description">Driver description goes here.</p>
+                    <div class="modal-driver-stats">
+                        <div class="stat">
+                            <span class="stat-value" id="modal-driver-championships">0</span>
+                            <span class="stat-label">Championships</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="modal-driver-wins">0</span>
+                            <span class="stat-label">Race Wins</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="modal-driver-poles">0</span>
+                            <span class="stat-label">Pole Positions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
